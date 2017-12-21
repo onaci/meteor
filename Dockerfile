@@ -29,17 +29,17 @@ WORKDIR /app
 #ONBUILD COPY --chown=meteor:meteor package.json /app/
 #ONBUILD RUN npm install
 
-ONBUILD COPY --chown=meteor:meteor . /app/
-ONBUILD COPY --chown=meteor:meteor .meteor/ /app/.meteor/
-ONBUILD RUN meteor list \
-            && meteor npm install
+#ONBUILD COPY --chown=meteor:meteor . /app/
+#ONBUILD COPY --chown=meteor:meteor .meteor/ /app/.meteor/
+#ONBUILD RUN meteor list \
+#            && meteor npm install
 
 #RUN ln -s /usr/local/bin/meteor /app/.meteor/meteor
 
 CMD meteor
 
 # I don't know why this keeps getting linkes to something in /root : /root/.meteor/packages/meteor-tool/1.5.2/mt-os.linux.x86_64/dev_bundle
-ONBUILD RUN rm -f /app/local/dev_bundle
+#ONBUILD RUN rm -f /app/local/dev_bundle
 
-ONBUILD RUN npm --version \
-    && meteor --version
+#ONBUILD RUN npm --version \
+#    && meteor --version
