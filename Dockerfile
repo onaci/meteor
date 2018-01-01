@@ -24,6 +24,7 @@ RUN npm --version \
     && meteor --version
 
 WORKDIR /app
+CMD meteor
 
 # just add the package.json to minimise re-installs
 #ONBUILD COPY --chown=meteor:meteor package.json /app/
@@ -36,7 +37,6 @@ WORKDIR /app
 
 #RUN ln -s /usr/local/bin/meteor /app/.meteor/meteor
 
-CMD meteor
 
 # I don't know why this keeps getting linkes to something in /root : /root/.meteor/packages/meteor-tool/1.5.2/mt-os.linux.x86_64/dev_bundle
 #ONBUILD RUN rm -f /app/local/dev_bundle
