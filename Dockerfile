@@ -9,6 +9,9 @@ ENV LC_ALL=C.UTF-8
 RUN apt-get update \
     && apt-get install -yq vim-tiny mongodb 
 
+# looks like meteor likes to log to /var/log, even when not running root
+RUN chmod 777 /var/log
+
 RUN adduser --system --group meteor --home /home/meteor \
     && mkdir -p /app/.meteor/ \
     && chown -R meteor:meteor /app
