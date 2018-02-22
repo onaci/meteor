@@ -1,7 +1,6 @@
 
-# the closest version to 4.8.4
 # see https://hub.docker.com/_/node/
-FROM node:4.8.7
+FROM node:6-stretch
 
 # for mongodb: https://github.com/tianon/docker-brew-debian/issues/45#issuecomment-250370410
 ENV LC_ALL=C.UTF-8
