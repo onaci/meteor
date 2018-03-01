@@ -6,7 +6,7 @@ FROM node:6-stretch
 ENV LC_ALL=C.UTF-8
 
 RUN apt-get update \
-    && apt-get install -yq vim-tiny mongodb 
+    && apt-get install -yq vim-tiny curl mongodb 
 
 # looks like meteor likes to log to /var/log, even when not running root
 RUN chmod 777 /var/log
