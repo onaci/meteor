@@ -14,6 +14,10 @@ RUN chmod 777 /var/log
 RUN adduser --system --group meteor --home /home/meteor \
     && mkdir -p /app/.meteor/ \
     && chown -R meteor:meteor /app
+
+# eslint
+RUN npm install -g eslint eslint-config-airbnb-base eslint-config-meteor eslint-plugin-import babel-eslint
+
 USER meteor
 
 # installing globally seems to cause issues
